@@ -1,0 +1,13 @@
+﻿@using WebBookStore.ViewModel
+@model BookViewModel
+
+<div class="container-fluid">
+	<div class="row">
+		@foreach (var book in Model.Books)
+		{
+			<partial name="_BooksResume" for="@book"></partial>
+		}
+
+		
+	</div>
+</div>

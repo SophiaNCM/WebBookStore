@@ -1,0 +1,25 @@
+﻿@using WebBookStore.ViewModel
+@model BookViewModel
+ 
+<link href="~/css/Style.css" rel="stylesheet"/>
+<div class="container-fluid bookContainer">
+	<div class="row">
+		<div class="col-5"><img src="@Model.BookDetail.Cover" alt="Capa do livro"  width="200px"/></div>
+		<div class="col-7">
+			<h2>@Model.BookDetail.Title</h2>
+			<p>Escritor(a): <span>@Model.BookDetail.Writer</span></p>
+			<p>Editora: <span>@Model.Publishers.PublisherName</span></p>
+			<h4 class="fw-bold">Por: <span>R$ @Model.BookDetail.Price</span></h4>
+			<button>Comprar</button>
+
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-4">
+			<button>Descrição</button>
+			<button>Ficha Técnica</button>
+		</div>
+	</div>
+</div>

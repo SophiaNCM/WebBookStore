@@ -1,0 +1,10 @@
+﻿@model Books
+<link href="~/css/Style.css" rel="stylesheet"/>
+<div class="col-2 banner">
+	<a asp-controller="Books" asp-action="Details" asp-route-bookId="@Model.BookId" class="text-decoration-none">
+		<img src="@Model.Cover" width="150px" class="imgs"></img>
+		<p class="title">@Model.Title</p>
+		<p class="text-black-50">@Model.Writer</p>
+		<p class="price">R$ @Model.Price</p>
+	</a>
+</div>

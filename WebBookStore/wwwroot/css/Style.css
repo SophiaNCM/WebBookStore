@@ -1,0 +1,53 @@
+﻿.banner{
+    margin-top: 20px;
+    width:220px;
+    border: 1px solid white;
+    padding-left: 10px;
+    padding-top:20px;
+    border-radius: 5px;
+    box-shadow: gray 0px 10px 20px;
+}
+    .banner:hover {
+        transition: 1.5s;
+        box-shadow: rgb(13, 58, 139) 0px 10px 30px;
+        cursor: pointer;
+        
+    }
+
+
+.title {
+    color:dark;
+    font-weight: bold;
+    padding-top: 2px;
+    font-size: 15px
+}
+.price {
+    font-weight: bold;
+    font-size:20px;
+}
+img{
+    margin:0 auto;
+    display:block;
+    border: 0px solid white;
+    border-radius: 3px;
+}
+.bookContainer {
+    border: 1px solid white;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    box-shadow: rgb(13, 58, 139) 0px 0px 20px;
+    padding: 30px;
+}
+button {
+    border: 2px solid rgb(13, 58, 139);
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    color: rgb(13, 58, 139);
+}
+    button:hover {
+        border: 2px solid white;
+        background-color: rgb(13, 58, 139);
+        color: white;
+    }
+
