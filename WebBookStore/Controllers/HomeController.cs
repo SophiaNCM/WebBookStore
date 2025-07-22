@@ -1,21 +1,34 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using WebBookStore.Models;
+using WebBookStore.Repositories.Interfaces;
+using WebBookStore.ViewModel;
 
 namespace WebBookStore.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IBooksRepository _Books;
+   
+
+
+
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IBooksRepository Tblbooks)
         {
             _logger = logger;
+
+            _Books = Tblbooks;
+    
         }
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Books> books;
+            books = _Books.Books;
+            var BooksViewModel = new BookViewModel { Books = books };
+            return View(BooksViewModel);
         }
 
         public IActionResult Privacy()

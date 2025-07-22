@@ -1,8 +1,28 @@
-﻿@{
+﻿@using WebBookStore.ViewModel
+@model BookViewModel
+<link href="~/css/Home.css" rel="stylesheet" type="text/css"/>
+@{
     ViewData["Title"] = "Home Page";
 }
+<body>
+    <div>
+        <div id="thumb">
+        </div>
+    </div>
+    <div class="booksDestaques">
+        <div class="container">
+            <p>Ficção</p>
+            <div class="row">
+                @foreach (var books in Model.Books)
+                {
+                        <partial name="_BooksResume" for="@books"></partial>
+                }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+
