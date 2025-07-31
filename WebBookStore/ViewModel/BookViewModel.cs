@@ -10,5 +10,7 @@ namespace WebBookStore.ViewModel
         public Publisher Publishers{ get; set; }
 
         public Category Categories { get; set; }
+
+        public int categoryId { get; set; }
     }
 }

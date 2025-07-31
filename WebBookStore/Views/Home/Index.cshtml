@@ -1,9 +1,8 @@
 ﻿@using WebBookStore.ViewModel
+
 @model BookViewModel
 <link href="~/css/Home.css" rel="stylesheet" type="text/css"/>
-@{
-    ViewData["Title"] = "Home Page";
-}
+
 <body>
     <div>
         <div id="thumb">
@@ -11,12 +10,16 @@
     </div>
     <div class="booksDestaques">
         <div class="container">
-            <p>Ficção</p>
+            <p>@Model.Categories.CategoryName</p>
             <div class="row">
-                @foreach (var books in Model.Books)
-                {
-                        <partial name="_BooksResume" for="@books"></partial>
-                }
+                <div class="col-2 banner">
+                    <a asp-controller="Books" asp-action="Details" asp-route-bookId="@Model.BookDetail.BookId" class="text-decoration-none">
+                        <img src="@Model.BookDetail.Cover" width="150px" class="imgs"></img>
+                        <p class="title">@Model.BookDetail.Title</p>
+                        <p class="text-black-50">@Model.BookDetail.Writer</p>
+                        <p class="price">R$ @Model.BookDetail.Price</p>
+                    </a>
+                </div>
 
             </div>
         </div>

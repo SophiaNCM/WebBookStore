@@ -10,5 +10,7 @@ namespace WebBookStore.Context
         public DbSet<Books> Books { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
+
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
     }
 }

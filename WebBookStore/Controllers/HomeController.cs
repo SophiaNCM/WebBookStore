@@ -9,25 +9,25 @@ namespace WebBookStore.Controllers
     public class HomeController : Controller
     {
         private readonly IBooksRepository _Books;
-   
+        private readonly ICategoryRepository _Category;
 
 
 
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, IBooksRepository Tblbooks)
+        public HomeController(ILogger<HomeController> logger, IBooksRepository Tblbooks, ICategoryRepository Tblcategory)
         {
             _logger = logger;
 
             _Books = Tblbooks;
-    
+            _Category = Tblcategory;
         }
 
         public IActionResult Index()
         {
-            IEnumerable<Books> books;
-            books = _Books.Books;
-            var BooksViewModel = new BookViewModel { Books = books };
+            var categories = _Category.Categories.FirstOrDefault(C => C.CategoryId == 1);
+            var books = _Books.Books.FirstOrDefault(b => b.CategoryId == categories.CategoryId);
+            var BooksViewModel = new BookViewModel { BookDetail = books, Categories = categories };
             return View(BooksViewModel);
         }
 
