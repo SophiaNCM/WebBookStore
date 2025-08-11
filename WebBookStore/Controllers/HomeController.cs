@@ -26,8 +26,8 @@ namespace WebBookStore.Controllers
         public IActionResult Index()
         {
             var categories = _Category.Categories.FirstOrDefault(C => C.CategoryId == 1);
-            var books = _Books.Books.FirstOrDefault(b => b.CategoryId == categories.CategoryId);
-            var BooksViewModel = new BookViewModel { BookDetail = books, Categories = categories };
+            var books = _Books.Books.Where(b => b.CategoryId == categories.CategoryId);
+            var BooksViewModel = new BookViewModel { Books = books, Categories = categories };
             return View(BooksViewModel);
         }
 

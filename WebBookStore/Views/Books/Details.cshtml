@@ -1,6 +1,7 @@
 ﻿@using WebBookStore.ViewModel
 @model BookViewModel
- 
+
+<script type="text/javascript" language="javascript" src="~/js/site.js" defer></script>
 <link href="~/css/Style.css" rel="stylesheet"/>
 <div class="container-fluid bookContainer">
 	<div class="row">
@@ -10,7 +11,7 @@
 			<p>Escritor(a): <span>@Model.BookDetail.Writer</span></p>
 			<p>Editora: <span>@Model.Publishers.PublisherName</span></p>
 			<h4 class="fw-bold">Por: <span>R$ @Model.BookDetail.Price</span></h4>
-			<button>Comprar</button>
+			<button class="Inactive">Comprar</button>
 
 		</div>
 	</div>
@@ -18,8 +19,31 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-4">
-			<button>Descrição</button>
-			<button>Ficha Técnica</button>
+			<button id="btnDescription" onclick="ShowDescription" class="Inactive">Descrição</button>
+			<button id="btnSpecifications" class="Inactive">Ficha Técnica</button>
 		</div>
+	</div>
+	<div class="container" id="description">
+		<p>@Model.BookDetail.Description</p>
+	</div>
+	<div class="container " id="Specifications">
+		<table class="table table-striped">
+    <tr>
+				<td>Numero de paginas</td>
+		<td>@Model.BookDetail.Price</td>
+    </tr>
+	<tr>
+		<td>Idioma</td>
+				<td>@Model.BookDetail.Language</td>
+	</tr>
+			<tr>
+				<td>Pais de origem</td>
+				<td>@Model.BookDetail.Country</td>
+			</tr>
+			<tr>
+				<td>Categoria</td>
+				<td>@Model.BookDetail.Category.CategoryName</td>
+			</tr>
+</table>
 	</div>
 </div>

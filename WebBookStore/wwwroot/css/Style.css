@@ -44,11 +44,36 @@ button {
     height: 40px;
     border-radius: 10px;
     color: rgb(13, 58, 139);
+   
 }
 button:hover {
         border: 2px solid white;
         background-color: rgb(13, 58, 139);
         color: white;
+}
+.Active {
+    background-color: rgb(13, 58, 139);
+    color: white;
+}
+.Inactive {
+    background-color:white;
+    border: 2px solid rgb(13, 58, 139);
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    color: rgb(13, 58, 139);
+}
+#description{
+    display:none;
+    width: 130vh;
+    margin-top: 30px;
+    background-color: rgb(234, 233, 233);
+    padding: 15px 30px;
+    border-radius: 10px;
+}
+#Specifications {
+    margin-top: 30px;
+    display: table;
 }
 
 

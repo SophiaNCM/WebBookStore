@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Http.Connections.Features;
 using Microsoft.EntityFrameworkCore;
 using WebBookStore.Context;
+using WebBookStore.Models;
 using WebBookStore.Repositories;
 using WebBookStore.Repositories.Interfaces;
 
@@ -13,6 +14,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 builder.Services.AddScoped<IBooksRepository, BooksRepository>();
 builder.Services.AddScoped<IPublisherRepository, PublisherRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped(sp => ShoppingCart.GetCart(sp));
 
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();

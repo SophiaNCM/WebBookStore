@@ -3,29 +3,23 @@
 @model BookViewModel
 <link href="~/css/Home.css" rel="stylesheet" type="text/css"/>
 
-<body>
-    <div>
+<div class="container">
         <div id="thumb">
         </div>
-    </div>
     <div class="booksDestaques">
         <div class="container">
             <p>@Model.Categories.CategoryName</p>
             <div class="row">
-                <div class="col-2 banner">
-                    <a asp-controller="Books" asp-action="Details" asp-route-bookId="@Model.BookDetail.BookId" class="text-decoration-none">
-                        <img src="@Model.BookDetail.Cover" width="150px" class="imgs"></img>
-                        <p class="title">@Model.BookDetail.Title</p>
-                        <p class="text-black-50">@Model.BookDetail.Writer</p>
-                        <p class="price">R$ @Model.BookDetail.Price</p>
-                    </a>
-                </div>
+                @foreach(var book in Model.Books)
+                {
+                    <partial name="_BooksResume" for="@book"/>
+                }
 
             </div>
         </div>
 
     </div>
-</body>
+</div>
 
 
 
