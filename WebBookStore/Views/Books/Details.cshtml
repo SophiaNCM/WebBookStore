@@ -9,9 +9,13 @@
 		<div class="col-7">
 			<h2>@Model.BookDetail.Title</h2>
 			<p>Escritor(a): <span>@Model.BookDetail.Writer</span></p>
-			<p>Editora: <span>@Model.Publishers.PublisherName</span></p>
+			<p>Editora: <span>@Model.BookDetail.Publisher.PublisherName</span></p>
 			<h4 class="fw-bold">Por: <span>R$ @Model.BookDetail.Price</span></h4>
-			<button class="Inactive">Comprar</button>
+			<!--Adiconando o livro ao carrinho de compra-->
+			<!--Precisamos informar o controller--><!--Precisamos informar o a action--><!--Precisamos informar a variavel usada na action-->
+			<a asp-controller="ShoppingCart" asp-action="AddItemShoppingCart" asp-route-bookId="@Model.BookDetail.BookId">
+				<button class="Inactive">Comprar</button>
+			</a>
 
 		</div>
 	</div>

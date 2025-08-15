@@ -15,6 +15,7 @@ builder.Services.AddScoped<IBooksRepository, BooksRepository>();
 builder.Services.AddScoped<IPublisherRepository, PublisherRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped(sp => ShoppingCart.GetCart(sp));
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
@@ -41,5 +42,11 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "CategoryFilter",
+    pattern: "Books/{action}/{category?}",
+    defaults: new { Controller = "Books", action = "Index" });
+
 
 app.Run();

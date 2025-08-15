@@ -1,7 +1,20 @@
 ﻿@using WebBookStore.ViewModel
 @model BookViewModel
+	
 
 <div class="container-fluid">
+	<div class="row">
+		<div class="col-6">
+		<!--input de pesquisa-->
+			<form class="navbar-form navbar-right" asp-controller="Books" asp-action="Search" method="get">
+				<input type="text" class="form-control" placeholder="Procurar um livro" name="searchString" value="@ViewData["searchString"]"></input>
+
+			</form>
+		</div>
+		<div class="col-6">
+			@await Component.InvokeAsync("CategoryMenu") <!--Chama a View Component CategoryMenu que esta na pasta shared-->
+		</div>
+	</div>
 	<div class="row">
 		@foreach (var book in Model.Books)
 		{

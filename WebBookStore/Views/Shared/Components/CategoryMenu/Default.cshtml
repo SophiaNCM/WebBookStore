@@ -1,0 +1,21 @@
+﻿
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Categorias
+    </button>
+    <ul class="dropdown-menu">
+        @foreach(var category in Model)
+        {
+            <li>
+                                                                                              <!--tem que ser o nome ta variavel informada na action-->
+                <a class="dropdown-item" asp-controller="Books" asp-action="Index" asp-route-categoryName="@category.CategoryName">@category.CategoryName</a>
+            </li>
+        }
+        <li class="dropdown-divider"></li>
+        <li>
+            <a class="dropdown-item" asp-controller="Books" asp-action="Index" asp-route-categoryName="">Todos os livros</a>
+
+        </li>
+
+    </ul>
+</div>

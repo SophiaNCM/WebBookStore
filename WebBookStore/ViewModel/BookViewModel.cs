@@ -11,6 +11,6 @@ namespace WebBookStore.ViewModel
 
         public Category Categories { get; set; }
 
-        public int categoryId { get; set; }
+        public string categoryName { get; set; }
     }
 }
