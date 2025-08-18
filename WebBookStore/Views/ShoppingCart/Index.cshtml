@@ -43,8 +43,12 @@
 
 		<div class="text-right">
 			<div class="btn-group">
-				<div class="btn btn-success" asp-controller="Order" asp-action="Checkout">Encerrar Pedido</div>
-				<div class="btn btn-primary" asp-controller="Books" asp-action="List">Continuar comprando</div>
+				<div>
+					<a class="btn btn-success" asp-controller="Orders" asp-action="Checkout">Encerrar Pedido</a>
+				</div>
+				<div >
+					<a class="btn btn-primary" asp-controller="Books" asp-action="Index">Continuar comprando</a>
+				</div>
 			</div>
 		</div>
 	</div>

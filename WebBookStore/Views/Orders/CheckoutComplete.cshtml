@@ -1,0 +1,39 @@
+﻿@model Orders
+
+<div class="container">
+	<div class="jumbotron">
+		<h2>@ViewBag.CheckoutComplete</h2>
+	</div>
+	<div class="card">
+		<div class="card-body">
+			<p> Cliente: <strong>@Model.Name</strong></p>
+			<p> Cliente: <strong>@Model.ArrivedData</strong></p>
+			<p> Cliente: <strong>@Model.OrderId</strong></p>
+
+			<table>
+				<tr>
+					<th></th>
+					<th>Quantidade</th>
+					<th>Livros</th>
+					<th>Preço</th>
+				</tr>
+				@foreach(var item in Model.OrderItens)
+				{
+					<tr>
+						<td><img src="@item.book.Cover" alt="Alternate Text"  width="40" height="40"/></td>
+						<td>@item.Quant</td>
+						<td>@item.book.Title</td>
+						<td>@item.book.Price</td>
+					</tr>
+				}
+			</table>
+
+			<h4>Valor Total do Pedido: <strong>@(((decimal)ViewBag.OrderTotal).ToString("C2"))</strong></h4>
+		</div>
+	</div>
+</div>
+<div class="form-group" style="text-align : center">
+	<h3>
+		<a class="nav-link text-info" asp-controller="Home" asp-action="Index">Retornar</a>
+	</h3>
+</div>
