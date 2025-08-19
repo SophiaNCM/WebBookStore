@@ -67,7 +67,7 @@ namespace WebBookStore.Models
         [DisplayFormat(DataFormatString = "{0: dd/MM/yyyy hh:mm}", ApplyFormatInEditMode = true)]
         public DateTime? ArrivedData { get; set; }
 
-        public List<OrderDetails> OrderItens { get; set; }
+        public List<OrderDetails>? OrderItens { get; set; }
 
     }
 }

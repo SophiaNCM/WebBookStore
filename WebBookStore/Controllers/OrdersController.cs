@@ -23,10 +23,10 @@ namespace WebBookStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cheackout(Orders order) 
+        public IActionResult Checkout(Orders order) 
         {
             int OrderItensTotal = 0;
-            decimal OrderTotal = 0;
+            decimal OrderTotal = 0.0m;
 
             //obter os intes do carrinho 
             List<ShoppingCartItem> Items = _shoppingCart.GetShoppingCartItems();
@@ -58,7 +58,7 @@ namespace WebBookStore.Controllers
 
                 // define mensagens ao cluebte
 
-                ViewBag.CheckoutComplete = "Obrigado pelo seu pedido";
+                ViewBag.CheckoutCompleteMenssage = "Obrigado pelo seu pedido";
                 ViewBag.OrderTotal = _shoppingCart.GetCartTotal();
 
                 //limpa o carrinho do cliente

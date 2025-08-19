@@ -27,7 +27,7 @@ namespace WebBookStore.Controllers
             };
             return View(ShoppingCartViewModel);
         }
-        public IActionResult AddItemShoppingCart(int bookId)
+        public RedirectToActionResult AddItemShoppingCart(int bookId)
         {
             var BookSelect = _booksRepository.Books.FirstOrDefault(p => p.BookId == bookId);
 
