@@ -23,7 +23,8 @@
                     </div>
                 </div>
                 <div class="d-flex ">
-                    <img src="~/img/do-utilizador.png" width="40px" style="margin-right: 20px"/>
+
+                    <a asp-controller="Account" asp-action="Login"> <img src="~/img/do-utilizador.png" width="40px" style="margin-right: 20px"></a>
                     @await Component.InvokeAsync("ShoppingCartResume")
                    
                 </div>

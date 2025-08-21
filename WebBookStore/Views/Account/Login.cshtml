@@ -1,0 +1,17 @@
+﻿@model LoginViewModel
+
+<link rel="stylesheet" href="~/css/Style.css" asp-append-version="true" />
+<form asp-controller="Account" asp-action="Login" method="post">
+	<div class="container login-container">
+		<label asp-for="UserName"></label>
+		<input asp-for="UserName" class="form-control"/>
+		<span asp-validation-for="UserName" class="text-danger"></span>
+		<br />
+		<label asp-for="Password"></label>
+		<input asp-for="Password" class="form-control" />
+		<span asp-validation-for="Password" class="text-danger"></span>
+
+		<button type="submit">Entrar</button>
+		<button><a asp-controller="Account" asp-action="Register" class="text-decoration-none">Registro</a></button>
+	</div>
+</form>
